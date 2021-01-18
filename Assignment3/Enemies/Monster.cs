@@ -16,21 +16,19 @@ namespace Assignment3.Enemies
         public int Hp { get => hp; set => hp = value; }
 
 
-        public void TakeDamage(int damage)
+      /* public void TakeDamage(int damage)
         {
             this.Hp -= damage;
 
             Console.WriteLine($"You hit the monster, dealing {damage} damage");
             Console.WriteLine(Hp);
 
-            /*if(Hp <= 0)
-            {
-                Console.WriteLine($"You killed the monster! You earned {ExpWhenKilled} exp points!");
+            //if(Hp <= 0)
+           // {
+           //     Console.WriteLine($"You killed the monster! You earned {ExpWhenKilled} exp points!");
                 
-            }*/
-        }
-
-
+            //}
+        }*/
 
     }
 }

@@ -5,14 +5,14 @@ using Assignment3.Interfaces;
 
 namespace Assignment3.Enemies
 {
-    class GiantSpider : Monster, IMonster
+    class NinjaThief : Monster, IMonster
     {
 
-        public GiantSpider()
+        public NinjaThief()
         {
-            this.Name = "Giant Spider";
-            this.Hp = 50;
-            this.ExpWhenKilled = 3;
+            this.Name = "Ninja Thief";
+            this.ExpWhenKilled = 2;
+            this.Hp = 30;
         }
 
         public void TakeDamage(int damage)
@@ -22,6 +22,6 @@ namespace Assignment3.Enemies
             Console.WriteLine($"You hit the monster, dealing {damage} damage");
             Console.WriteLine(Hp);
         }
-
+        
     }
 }

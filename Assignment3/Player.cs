@@ -11,7 +11,7 @@ namespace Assignment3
         private string name;
         private int level;
         private int exp;
-        private int hp = 20;
+        private int hp = 200;
 
         // Level 1-10. Ska bli svårare att level up ju högre level man kommer till.
         // När man level upp, skriv ut typ You leveled up! You are now level xx, with xx exp and xx hp.
@@ -35,6 +35,51 @@ namespace Assignment3
             Console.WriteLine(Hp);
 
            
+        }
+
+        public void CheckLevel(int exp)
+        {
+            if(exp == 10)
+            {
+                level = 10;
+            }
+            else if (exp == 9)
+            {
+                level = 9;
+            }
+            else if (exp == 8)
+            {
+                level = 8;
+            }
+            else if (exp == 7)
+            {
+                level = 7;
+            }
+            else if (exp == 6)
+            {
+                level = 6;
+            }
+            else if (exp == 5)
+            {
+                level = 5;
+
+            }
+            else if (exp == 4)
+            {
+                level = 4;
+            }
+            else if (exp == 3)
+            {
+                level = 3;
+            }
+            else if (exp == 2)
+            {
+                level = 2;
+            }
+            else if (exp == 1)
+            {
+                level = 1;
+            }
         }
 
         public void CharacterDetails()

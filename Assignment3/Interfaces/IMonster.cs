@@ -4,7 +4,12 @@ using System.Text;
 
 namespace Assignment3.Interfaces
 {
-    class IMonster
+    interface IMonster
     {
+
+       public void TakeDamage(int damage);
+
+       // public void StrongerMonster(); Monster blir starkare när player levlar upp
+
     }
 }
