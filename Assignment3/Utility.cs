@@ -1,30 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Assignment3.Enemies;
 
 namespace Assignment3
 {
     class Utility
     {
-        
 
+        private static readonly Random random = new Random();
 
         public static Monster RandomMonster(List<Monster> listOfMonsters)
         {
-
-            Random random = new Random();
             int rand = random.Next(listOfMonsters.Count);
 
             return listOfMonsters[rand];
-           
-
         }
         
 
-        public static int RandomNumber(int x, int y)
+        public static int RandomNumber()
         {
-            Random random = new Random();
+            int x = 1;
+            int y = 10;
+                
             int rand = random.Next(x, y);
 
             return rand;

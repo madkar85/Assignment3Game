@@ -71,7 +71,7 @@ namespace Assignment3
 
         public static void PlayGame(Monster monster)
         {
-            int chance = Utility.RandomNumber(1,11);
+            int chance = Utility.RandomNumber();
             if (chance == 1)
             {
                 Console.WriteLine("There´s nothing but swaying grass as far as the eye can see.");
@@ -94,9 +94,9 @@ namespace Assignment3
             while (keepFighting)
             {
                 Console.WriteLine($"A {monster.Name} blocks your way. You have to fight to get past it!");
-                monster.TakeDamage(Utility.RandomNumber(1,10));
-                player.TakeDamage(Utility.RandomNumber(1,10));
-                //player.TakeDamage(2);
+                monster.TakeDamage(Utility.RandomNumber());
+                player.TakeDamage(Utility.RandomNumber());
+                
 
                 if (monster.Hp <= 0)
                 {
