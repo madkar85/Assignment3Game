@@ -15,18 +15,7 @@ namespace Assignment3
         private int exp;
         private int hp = 400;
 
-        // Level 1-10. Ska bli svårare att level up ju högre level man kommer till.
-        // När man level upp, skriv ut typ You leveled up! You are now level xx, with xx exp and xx hp.
-        //Level 1 : 20 exp
-        //Level 2:  40 exp;
-        //Level 3 : 60 exp
-        //Level 4 : 80 exp
-        //Level 5 : 100 exp
-        //Level 6 : 120 exp
-        //Level 7 : 140 exp
-        //Level 8 : 160 exp
-        //Level 9 : 180 exp
-        //Level 10: 200 exp
+      
 
         public void TakeDamage(int damage)
         {

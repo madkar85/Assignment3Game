@@ -88,18 +88,19 @@ namespace Assignment3
 
         public static void BattleMode(Monster monster)
         {
-
+            monster.SetMonsterToughness(player);
             bool keepFighting = true;
 
             while (keepFighting)
             {
+               
                 Console.WriteLine($"A {monster.Name} blocks your way. You have to fight to get past it!");
                 monster.TakeDamage(Utility.RandomNumber());
                 player.TakeDamage(Utility.RandomNumber());
                 
 
                 if (monster.Hp <= 0)
-                {
+                {                   
                     Console.WriteLine($"You killed the monster! You earned {monster.ExpWhenKilled} exp points!");
                     player.Exp += monster.ExpWhenKilled;
                     Console.WriteLine($"You are level {player.Level}. You have {player.Exp} exp and {player.Hp} health points.");
@@ -134,6 +135,7 @@ namespace Assignment3
         }
         public static void ExitGame()
         {
+            
             Console.WriteLine("Thanks for playing!");
 
         }

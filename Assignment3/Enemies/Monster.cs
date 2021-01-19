@@ -27,5 +27,15 @@ namespace Assignment3.Enemies
             
         } 
 
+        public virtual void SetMonsterToughness(Player player)
+        {
+            
+            if(player.Level == 1)
+            {
+                this.Hp += 5;
+                this.ExpWhenKilled -= 2;
+            }
+        }
+
     }
 }

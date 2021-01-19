@@ -15,13 +15,6 @@ namespace Assignment3.Enemies
             this.ExpWhenKilled = 8;
         }
 
-        /*public override void TakeDamage(int damage)
-        {
-            this.Hp -= damage;
-
-            Console.WriteLine($"You hit the monster, dealing {damage} damage");
-            Console.WriteLine(Hp);
-        }*/
 
     }
 }
