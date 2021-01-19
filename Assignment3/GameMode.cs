@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Assignment3.Enemies;
+using Assignment3.Interfaces;
 
 namespace Assignment3
 {
@@ -30,6 +31,7 @@ namespace Assignment3
 
             while (keepGoing)
             {
+                List<Monster> listOfMonsters = new List<Monster> { new Troll(), new GiantSpider(), new NinjaThief() };
                 Console.WriteLine("1. Go adventuring");
                 Console.WriteLine("2. Show details about your character");
                 Console.WriteLine("3. Exit game");
@@ -39,10 +41,10 @@ namespace Assignment3
                 switch (choice)
                 {
                     case "1":
-
+                        // fixa så det blir en ny lista med monster efter en fight där monstret dog
                         PlayGame(Utility.RandomMonster(listOfMonsters));
                         
-                        if (player.Hp <= 0 || player.Level == 1)
+                        if (player.Hp <= 0 || player.Level == 10)
                         {
                             ExitGame();
                             keepGoing = false;
@@ -92,27 +94,23 @@ namespace Assignment3
             while (keepFighting)
             {
                 Console.WriteLine($"A {monster.Name} blocks your way. You have to fight to get past it!");
-                monster.TakeDamage(Utility.RandomNumber(1, 9));
-                //monster.TakeDamage(10);
-                player.TakeDamage(Utility.RandomNumber(1, 7));
+                monster.TakeDamage(Utility.RandomNumber(1,10));
+                player.TakeDamage(Utility.RandomNumber(1,10));
                 //player.TakeDamage(2);
 
                 if (monster.Hp <= 0)
                 {
                     Console.WriteLine($"You killed the monster! You earned {monster.ExpWhenKilled} exp points!");
                     player.Exp += monster.ExpWhenKilled;
-                    Console.WriteLine(player.Exp);
-                    player.CheckLevel(player.Exp);
-                    /*if (player.Exp == 35)
-                    {
-                        player.Level = 1;
-                    }*/
+                    Console.WriteLine($"You are level {player.Level}. You have {player.Exp} exp and {player.Hp} health points.");
+                     
                     keepFighting = false;
                 }
                 else if (player.Hp <= 0)
                 {
                     Console.WriteLine($"You were killed!");
                     keepFighting = false;
+                    break;
                 }
 
                 if (player.Level == 10)

@@ -6,7 +6,7 @@ using Assignment3.Interfaces;
 
 namespace Assignment3.Enemies
 {
-    class Troll : Monster, IMonster
+    class Troll : Monster
     {
        // private string name = "Troll";
        // private int expWhenKilled = 35;
@@ -15,26 +15,17 @@ namespace Assignment3.Enemies
         public Troll()
         {
             this.Name = "Troll";
-            this.ExpWhenKilled = 1;
+            this.ExpWhenKilled = 5;
             this.Hp = 20;
         }
 
-        /* public void TakeDamage(int damage)
+         /*public override void TakeDamage(int damage)
         {
             this.Hp -= damage;
 
             Console.WriteLine($"You hit the monster, dealing {damage} damage");
             Console.WriteLine(Hp);
         }*/
-
-        public void TakeDamage(int damage)
-        {
-            this.Hp -= damage;
-
-            Console.WriteLine($"You hit the monster, dealing {damage} damage");
-            Console.WriteLine(Hp);
-        }
-
         
     }
 }

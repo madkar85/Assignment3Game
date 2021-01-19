@@ -5,23 +5,23 @@ using Assignment3.Interfaces;
 
 namespace Assignment3.Enemies
 {
-    class GiantSpider : Monster, IMonster
+    class GiantSpider : Monster
     {
 
         public GiantSpider()
         {
             this.Name = "Giant Spider";
             this.Hp = 50;
-            this.ExpWhenKilled = 3;
+            this.ExpWhenKilled = 8;
         }
 
-        public void TakeDamage(int damage)
+        /*public override void TakeDamage(int damage)
         {
             this.Hp -= damage;
 
             Console.WriteLine($"You hit the monster, dealing {damage} damage");
             Console.WriteLine(Hp);
-        }
+        }*/
 
     }
 }

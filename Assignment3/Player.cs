@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Net.Security;
 using System.Text;
+
 
 namespace Assignment3
 {
@@ -11,20 +13,20 @@ namespace Assignment3
         private string name;
         private int level;
         private int exp;
-        private int hp = 200;
+        private int hp = 400;
 
         // Level 1-10. Ska bli svårare att level up ju högre level man kommer till.
         // När man level upp, skriv ut typ You leveled up! You are now level xx, with xx exp and xx hp.
-        //Level 1 : 30 exp
-        //Level 2:  90 exp;
-        //Level 3 : 180 exp
-        //Level 4 : 300 exp
-        //Level 5 : 450 exp
-        //Level 6 : 630 exp
-        //Level 7 : 840 exp
-        //Level 8: 1080 exp
-        //Level 9: 1350 exp
-        //Level 10: 1650 exp
+        //Level 1 : 20 exp
+        //Level 2:  40 exp;
+        //Level 3 : 60 exp
+        //Level 4 : 80 exp
+        //Level 5 : 100 exp
+        //Level 6 : 120 exp
+        //Level 7 : 140 exp
+        //Level 8 : 160 exp
+        //Level 9 : 180 exp
+        //Level 10: 200 exp
 
         public void TakeDamage(int damage)
         {
@@ -32,54 +34,9 @@ namespace Assignment3
             this.Hp -= damage;
 
             Console.WriteLine($"The monster hit you, dealing {damage} damage");
-            Console.WriteLine(Hp);
+            Console.WriteLine($"{Name} hp: {Hp}");
 
            
-        }
-
-        public void CheckLevel(int exp)
-        {
-            if(exp == 10)
-            {
-                level = 10;
-            }
-            else if (exp == 9)
-            {
-                level = 9;
-            }
-            else if (exp == 8)
-            {
-                level = 8;
-            }
-            else if (exp == 7)
-            {
-                level = 7;
-            }
-            else if (exp == 6)
-            {
-                level = 6;
-            }
-            else if (exp == 5)
-            {
-                level = 5;
-
-            }
-            else if (exp == 4)
-            {
-                level = 4;
-            }
-            else if (exp == 3)
-            {
-                level = 3;
-            }
-            else if (exp == 2)
-            {
-                level = 2;
-            }
-            else if (exp == 1)
-            {
-                level = 1;
-            }
         }
 
         public void CharacterDetails()
@@ -96,7 +53,13 @@ namespace Assignment3
 
         public string Name { get => name; set => name = value; }
         public int Level { get => level; set => level = value; }
-        public int Exp { get => exp; set => exp = value; }
+        public int Exp {
+            get => exp;
+            set {
+                exp = value;
+                this.Level = value / 10;
+            }
+        }
         public int Hp { get => hp; set => hp = value; }
     }
 }
