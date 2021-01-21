@@ -7,7 +7,7 @@ namespace Assignment3.Interfaces
     interface IMonster
     {
 
-       public void TakeDamage(int damage);
+       public void TakeDamage(int damage, Player player);
 
        public void SetMonsterToughness(Player player);
 

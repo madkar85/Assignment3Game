@@ -4,6 +4,7 @@ using System.Text;
 using Assignment3.Enemies;
 using Assignment3.Interfaces;
 
+
 namespace Assignment3
 {
     class GameMode
@@ -37,7 +38,8 @@ namespace Assignment3
                 List<Monster> listOfMonsters = new List<Monster> { new Troll(), new GiantSpider(), new NinjaThief() };
                 Console.WriteLine("1. Go adventuring");
                 Console.WriteLine("2. Show details about your character");
-                Console.WriteLine("3. Exit game");
+                Console.WriteLine("3. Go to Shop");
+                Console.WriteLine("4. Exit game");
                 string choice = Console.ReadLine();
 
 
@@ -57,6 +59,9 @@ namespace Assignment3
                         CharacterDetails();
                         break;
                     case "3":
+                        Shop.ShopMenu(player);
+                        break;
+                    case "4":
                         ExitGame();
                         keepGoing = false;
                         break;
@@ -109,7 +114,7 @@ namespace Assignment3
             {
                
                 Console.WriteLine($"A {monster.Name} blocks your way. You have to fight to get past it!");
-                monster.TakeDamage(Utility.RandomNumber(1,11));               
+                monster.TakeDamage(Utility.RandomNumber(1,11), player);               
                 if (monster.Hp <= 0)
                 {
                     monster.IsDead(player);

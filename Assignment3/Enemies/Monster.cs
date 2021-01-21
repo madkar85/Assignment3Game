@@ -11,15 +11,25 @@ namespace Assignment3.Enemies
         private string name;
         private int expWhenKilled;
         private int hp;
+        private int gold;
 
         public string Name { get => name; set => name = value; }
         public int ExpWhenKilled { get => expWhenKilled; set => expWhenKilled = value; }
         public int Hp { get => hp; set => hp = value; }
+        public int Gold { get => gold; set => gold = value; }
 
-
-       public virtual void TakeDamage(int damage)
+        public virtual void TakeDamage(int damage, Player player)
         {
+            if(player.Strength > 0)
+            {
+                damage = damage + player.Strength;
+            }
             this.Hp -= damage;
+
+            if(damage <= 0)
+            {
+                damage = 0;
+            }
 
             if (Hp <= 0)
             {
@@ -38,7 +48,8 @@ namespace Assignment3.Enemies
             {
                 Console.WriteLine($"You killed the monster! You earned {this.ExpWhenKilled} exp points!");
                 player.Exp += this.ExpWhenKilled;
-                Console.WriteLine($"You are level {player.Level}. You have {player.Exp} exp and {player.Hp} health points.");
+                player.Gold += this.Gold;
+                Console.WriteLine($"You are level {player.Level}. You have {player.Exp} exp, {player.Hp} health points and {player.Gold} gold coins.");
 
                //keepFighting = false;
             }

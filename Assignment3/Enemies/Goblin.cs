@@ -12,6 +12,7 @@ namespace Assignment3.Enemies
             this.Name = "Goblin";
             this.Hp = 25;
             this.ExpWhenKilled = 7;
+            this.Gold = 30;
         }
     }
 }

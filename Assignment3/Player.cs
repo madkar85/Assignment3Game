@@ -14,13 +14,24 @@ namespace Assignment3
         private int level;
         private int exp;
         private int hp = 400;
+        private int gold;
+        private int strength;
+        private int toughness;
 
       
 
         public void TakeDamage(int damage)
         {
+            if(this.Toughness > 0)
+            {
+                damage = damage - Toughness;
+            }
 
             this.Hp -= damage;
+            if(damage <= 0)
+            {
+                damage = 0;
+            }
 
             Console.WriteLine($"The monster hit you, dealing {damage} damage");
             Console.WriteLine($"{Name} hp: {Hp}");
@@ -39,10 +50,13 @@ namespace Assignment3
 
         public void CharacterDetails()
         {
-            Console.WriteLine($"Players name = {this.name}");
-            Console.WriteLine($"Level: {this.level}");
-            Console.WriteLine($"Experience points: {this.exp}");
-            Console.WriteLine($"Health points: {this.hp}");
+            Console.WriteLine($"Players name = {this.Name}");
+            Console.WriteLine($"Level: {this.Level}");
+            Console.WriteLine($"Experience points: {this.Exp}");
+            Console.WriteLine($"Health points: {this.Hp}");
+            Console.WriteLine($"Gold: {this.Gold} coins");
+            Console.WriteLine($"Strength: {this.Strength}");
+            Console.WriteLine($"Toughness: {this.Toughness}");
 
         }
         
@@ -59,5 +73,9 @@ namespace Assignment3
             }
         }
         public int Hp { get => hp; set => hp = value; }
+
+        public int Gold { get => gold; set => gold = value; }
+        public int Strength { get => strength; set => strength = value; }
+        public int Toughness { get => toughness; set => toughness = value; }
     }
 }

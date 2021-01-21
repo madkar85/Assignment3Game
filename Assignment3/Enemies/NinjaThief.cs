@@ -13,6 +13,7 @@ namespace Assignment3.Enemies
             this.Name = "Ninja Thief";
             this.Hp = 35;
             this.ExpWhenKilled = 12;
+            this.Gold = 50;
         }
         
     }

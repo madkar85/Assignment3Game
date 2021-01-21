@@ -13,6 +13,7 @@ namespace Assignment3.Enemies
             this.Name = "Giant Spider";
             this.Hp = 40;
             this.ExpWhenKilled = 8;
+            this.Gold = 60;
         }
 
 
