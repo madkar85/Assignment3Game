@@ -106,30 +106,29 @@ namespace Assignment3
             {
                
                 Console.WriteLine($"A {monster.Name} blocks your way. You have to fight to get past it!");
-                monster.TakeDamage(Utility.RandomNumber(1,11));
-                player.TakeDamage(Utility.RandomNumber(1,11));
-                
-
+                monster.TakeDamage(Utility.RandomNumber(1,11));               
                 if (monster.Hp <= 0)
-                {                   
-                    Console.WriteLine($"You killed the monster! You earned {monster.ExpWhenKilled} exp points!");
-                    player.Exp += monster.ExpWhenKilled;
-                    Console.WriteLine($"You are level {player.Level}. You have {player.Exp} exp and {player.Hp} health points.");
+                {
+                    monster.IsDead(player);
                      
                     keepFighting = false;
                 }
-                else if (player.Hp <= 0)
+                else
                 {
-                    Console.WriteLine($"You were killed!");
-                    keepFighting = false;
-                    break;
-                }
+                    player.TakeDamage(Utility.RandomNumber(1, 11));
+                    if (player.Hp <= 0)
+                    {
+                        player.IsDead();
+                        keepFighting = false;
+                        break;
+                    }
 
-                if (player.Level == 10)
-                {
-                    Console.WriteLine("Congratulations! You reached level 10 and won the game!");
-                    keepFighting = false;
-                }
+                    if (player.Level == 10)
+                    {
+                        Console.WriteLine("Congratulations! You reached level 10 and won the game!");
+                        keepFighting = false;
+                    }
+                }          
 
                 Console.WriteLine("Press enter to continue");
                 Console.ReadLine();

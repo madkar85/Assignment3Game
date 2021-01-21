@@ -28,6 +28,13 @@ namespace Assignment3
            
         }
 
+        public void IsDead()
+        {
+
+                Console.WriteLine($"You were killed!");       
+           
+        }
+
         public void CharacterDetails()
         {
             Console.WriteLine($"Players name = {this.name}");

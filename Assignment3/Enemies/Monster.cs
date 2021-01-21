@@ -21,15 +21,28 @@ namespace Assignment3.Enemies
         {
             this.Hp -= damage;
 
-            Console.WriteLine($"You hit the monster, dealing {damage} damage");           
             if (Hp <= 0)
             {
                 this.Hp = 0;
             }
+
+            Console.WriteLine($"You hit the monster, dealing {damage} damage");           
             Console.WriteLine($"{Name} hp: {Hp}");
 
 
         } 
+
+        public virtual void IsDead(Player player)
+        {
+            if (this.Hp <= 0)
+            {
+                Console.WriteLine($"You killed the monster! You earned {this.ExpWhenKilled} exp points!");
+                player.Exp += this.ExpWhenKilled;
+                Console.WriteLine($"You are level {player.Level}. You have {player.Exp} exp and {player.Hp} health points.");
+
+               //keepFighting = false;
+            }
+        }
 
         public virtual void SetMonsterToughness(Player player)
         {
