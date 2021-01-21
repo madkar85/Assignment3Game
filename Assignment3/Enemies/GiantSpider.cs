@@ -11,7 +11,7 @@ namespace Assignment3.Enemies
         public GiantSpider()
         {
             this.Name = "Giant Spider";
-            this.Hp = 50;
+            this.Hp = 40;
             this.ExpWhenKilled = 8;
         }
 

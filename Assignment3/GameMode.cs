@@ -13,10 +13,13 @@ namespace Assignment3
 
         public static void Welcome()
         {
-            Console.WriteLine("Hello and welcome!");
-            Console.WriteLine("Please enter your name: ");
+            Console.WriteLine("* * * * * * * * * * * *");
+            Console.WriteLine("* Hello and welcome!");
+            Console.WriteLine("* Please enter your name: ");
             string name = Console.ReadLine();
             player.Name = name;
+            Console.WriteLine($"* Let´s start the game, {player.Name}!");
+            Console.WriteLine("* * * * * * * * * * * * *");
 
             Menu();
 
@@ -73,7 +76,7 @@ namespace Assignment3
         {
             int direction = Utility.RandomNumber(1, 3);
             int chance = Utility.RandomNumber(1,11);
-            if (chance < 5)
+            if (chance == 1)
             {
                 if(direction == 1)
                 {

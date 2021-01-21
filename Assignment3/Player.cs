@@ -35,6 +35,8 @@ namespace Assignment3
            
         }
 
+    
+
         public void CharacterDetails()
         {
             Console.WriteLine($"Players name = {this.name}");

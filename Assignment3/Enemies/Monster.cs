@@ -49,9 +49,37 @@ namespace Assignment3.Enemies
             
             if(player.Level == 1)
             {
-                this.Hp += 5;
+                this.Hp += 3;
                 this.ExpWhenKilled -= 2;
             }
+            else if(player.Level == 2)
+            {
+                this.Hp += 6;
+                this.ExpWhenKilled -= 2;
+            }
+            else if(player.Level == 3)
+            {
+                this.Hp += 8;
+                this.ExpWhenKilled -= 2;
+            }
+            else if (player.Level >= 4 || player.Level == 5)
+            {
+                this.Hp += 10;
+                this.ExpWhenKilled -= 2;
+            }                      
+            else if (player.Level >= 6 || player.Level == 8)
+            {
+                this.Hp += 12;
+                this.ExpWhenKilled -= 2;
+            }         
+            else if (player.Level >= 9)
+            {
+                this.Hp += 14;
+                this.ExpWhenKilled -= 2;
+            }
+            //player.Level += 1;
+
+
         }
 
     }

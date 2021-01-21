@@ -11,12 +11,9 @@ namespace Assignment3.Enemies
         public NinjaThief()
         {
             this.Name = "Ninja Thief";
-            this.ExpWhenKilled = 10;
             this.Hp = 35;
+            this.ExpWhenKilled = 12;
         }
-
-
-
         
     }
 }

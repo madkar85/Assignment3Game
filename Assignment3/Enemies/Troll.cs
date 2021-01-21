@@ -12,8 +12,8 @@ namespace Assignment3.Enemies
         public Troll()
         {
             this.Name = "Troll";
-            this.ExpWhenKilled = 5;
             this.Hp = 20;
+            this.ExpWhenKilled = 5;
         }
 
 
