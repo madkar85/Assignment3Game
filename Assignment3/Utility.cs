@@ -17,11 +17,8 @@ namespace Assignment3
         }
         
 
-        public static int RandomNumber()
-        {
-            int x = 1;
-            int y = 10;
-                
+        public static int RandomNumber(int x, int y)
+        {               
             int rand = random.Next(x, y);
 
             return rand;

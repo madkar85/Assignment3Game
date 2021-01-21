@@ -21,10 +21,14 @@ namespace Assignment3.Enemies
         {
             this.Hp -= damage;
 
-            Console.WriteLine($"You hit the monster, dealing {damage} damage");
+            Console.WriteLine($"You hit the monster, dealing {damage} damage");           
+            if (Hp <= 0)
+            {
+                this.Hp = 0;
+            }
             Console.WriteLine($"{Name} hp: {Hp}");
 
-            
+
         } 
 
         public virtual void SetMonsterToughness(Player player)

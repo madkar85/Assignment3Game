@@ -41,7 +41,7 @@ namespace Assignment3
                 switch (choice)
                 {
                     case "1":
-                        // fixa så det blir en ny lista med monster efter en fight där monstret dog
+                        
                         PlayGame(Utility.RandomMonster(listOfMonsters));
                         
                         if (player.Hp <= 0 || player.Level == 10)
@@ -71,12 +71,23 @@ namespace Assignment3
 
         public static void PlayGame(Monster monster)
         {
-            int chance = Utility.RandomNumber();
-            if (chance == 1)
+            int direction = Utility.RandomNumber(1, 3);
+            int chance = Utility.RandomNumber(1,11);
+            if (chance < 5)
             {
-                Console.WriteLine("There´s nothing but swaying grass as far as the eye can see.");
-                Console.WriteLine("Press enter to continue");
-                Console.ReadLine();
+                if(direction == 1)
+                {
+                    Console.WriteLine("There´s only an old, dense forest. It looks really difficult to get through there.");
+                    Console.WriteLine("Press enter to continue");
+                    Console.ReadLine();
+                }
+                else 
+                {
+                    Console.WriteLine("There´s nothing here, only green fields as far as you can see. Maybe a dark mountain far away in the distant.");
+                    Console.WriteLine("Press enter to continue");
+                    Console.ReadLine();
+                } 
+
             }
             else
             {
@@ -95,8 +106,8 @@ namespace Assignment3
             {
                
                 Console.WriteLine($"A {monster.Name} blocks your way. You have to fight to get past it!");
-                monster.TakeDamage(Utility.RandomNumber());
-                player.TakeDamage(Utility.RandomNumber());
+                monster.TakeDamage(Utility.RandomNumber(1,11));
+                player.TakeDamage(Utility.RandomNumber(1,11));
                 
 
                 if (monster.Hp <= 0)
