@@ -12,11 +12,13 @@ namespace Assignment3.Enemies
         private int expWhenKilled;
         private int hp;
         private int gold;
+        private string sound;
 
         public string Name { get => name; set => name = value; }
         public int ExpWhenKilled { get => expWhenKilled; set => expWhenKilled = value; }
         public int Hp { get => hp; set => hp = value; }
         public int Gold { get => gold; set => gold = value; }
+        public string Sound { get => sound; set => sound = value; }
 
         public virtual void TakeDamage(int damage, Player player)
         {
@@ -88,9 +90,12 @@ namespace Assignment3.Enemies
                 this.Hp += 14;
                 this.ExpWhenKilled -= 2;
             }
-            //player.Level += 1;
 
+        }
 
+        public virtual void Noice(string sound)
+        {
+            Console.WriteLine($"* {this.Sound} *");
         }
 
     }

@@ -13,6 +13,7 @@ namespace Assignment3.Enemies
             this.Hp = 25;
             this.ExpWhenKilled = 7;
             this.Gold = 30;
+            this.Sound = "iiiiIIIIeeeehhhhh";
         }
     }
 }

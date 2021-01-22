@@ -11,7 +11,9 @@ namespace Assignment3.Interfaces
 
        public void SetMonsterToughness(Player player);
 
-       // public void StrongerMonster(); Monster blir starkare när player levlar upp
+        public void Noice(string sound);
+
+       
 
     }
 }

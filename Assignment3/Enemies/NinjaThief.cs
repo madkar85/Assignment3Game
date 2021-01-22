@@ -14,6 +14,7 @@ namespace Assignment3.Enemies
             this.Hp = 35;
             this.ExpWhenKilled = 12;
             this.Gold = 50;
+            this.Sound = "I'm gonna cut you!";
         }
         
     }

@@ -114,6 +114,7 @@ namespace Assignment3
             {
                
                 Console.WriteLine($"A {monster.Name} blocks your way. You have to fight to get past it!");
+                monster.Noice(monster.Sound);
                 monster.TakeDamage(Utility.RandomNumber(1,11), player);               
                 if (monster.Hp <= 0)
                 {

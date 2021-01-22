@@ -14,6 +14,7 @@ namespace Assignment3.Enemies
             this.Hp = 40;
             this.ExpWhenKilled = 8;
             this.Gold = 60;
+            this.Sound = "*swish swish* You look like a nice dinner!";
         }
 
 

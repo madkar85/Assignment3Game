@@ -33,6 +33,12 @@ namespace Assignment3
                 damage = 0;
             }
 
+
+            if (Hp <= 0)
+            {
+                this.Hp = 0;
+            }
+
             Console.WriteLine($"The monster hit you, dealing {damage} damage");
             Console.WriteLine($"{Name} hp: {Hp}");
 
@@ -50,14 +56,15 @@ namespace Assignment3
 
         public void CharacterDetails()
         {
-            Console.WriteLine($"Players name = {this.Name}");
-            Console.WriteLine($"Level: {this.Level}");
-            Console.WriteLine($"Experience points: {this.Exp}");
-            Console.WriteLine($"Health points: {this.Hp}");
-            Console.WriteLine($"Gold: {this.Gold} coins");
-            Console.WriteLine($"Strength: {this.Strength}");
-            Console.WriteLine($"Toughness: {this.Toughness}");
-
+            Console.WriteLine("* * * * * * * * * * * *");
+            Console.WriteLine($"* Players name = {this.Name}");
+            Console.WriteLine($"* Level: {this.Level}");
+            Console.WriteLine($"* Experience points: {this.Exp}");
+            Console.WriteLine($"* Health points: {this.Hp}");
+            Console.WriteLine($"* Gold: {this.Gold} coins");
+            Console.WriteLine($"* Strength: {this.Strength}");
+            Console.WriteLine($"* Toughness: {this.Toughness}");
+            Console.WriteLine("* * * * * * * * * * * *");
         }
         
 
