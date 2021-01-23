@@ -48,10 +48,11 @@ namespace Assignment3.Enemies
         {
             if (this.Hp <= 0)
             {
-                Console.WriteLine($"You killed the monster! You earned {this.ExpWhenKilled} exp points!");
+                Console.WriteLine($"* You killed the monster! You earned {this.ExpWhenKilled} exp points! *");
                 player.Exp += this.ExpWhenKilled;
                 player.Gold += this.Gold;
-                Console.WriteLine($"You are level {player.Level}. You have {player.Exp} exp, {player.Hp} health points and {player.Gold} gold coins.");
+                player.CheckLevel(player);
+                //Console.WriteLine($"You are level {player.Level}. You have {player.Exp} exp, {player.Hp} health points and {player.Gold} gold coins.");
 
                //keepFighting = false;
             }

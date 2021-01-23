@@ -131,12 +131,7 @@ namespace Assignment3
                         keepFighting = false;
                         break;
                     }
-
-                    if (player.Level == 10)
-                    {
-                        Console.WriteLine("Congratulations! You reached level 10 and won the game!");
-                        keepFighting = false;
-                    }
+                 
                 }          
 
                 Console.WriteLine("Press enter to continue");

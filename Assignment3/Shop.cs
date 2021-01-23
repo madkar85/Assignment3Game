@@ -23,7 +23,7 @@ namespace Assignment3
                 switch (choice)
                 {
                     case "1":
-                        if(player.Gold <= 100)
+                        if(player.Gold < 100)
                         {
                         Console.WriteLine("You can't afford this :(");
                         }
@@ -35,7 +35,7 @@ namespace Assignment3
                         }                       
                         break;
                     case "2":
-                        if (player.Gold <= 100)
+                        if (player.Gold < 100)
                         {
                         Console.WriteLine("You can't afford this :(");
                         }
@@ -47,7 +47,6 @@ namespace Assignment3
                         }
                         break;
                     case "3":
-                        GameMode.Menu();
                         keepBuying = false;                            
                         break;
                     default:
@@ -55,9 +54,10 @@ namespace Assignment3
                         break;
                 }
 
+
             }
 
-            
+            Console.Clear();
 
         }
 

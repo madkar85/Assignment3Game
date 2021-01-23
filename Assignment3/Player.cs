@@ -66,6 +66,18 @@ namespace Assignment3
             Console.WriteLine($"* Toughness: {this.Toughness}");
             Console.WriteLine("* * * * * * * * * * * *");
         }
+
+        public void CheckLevel(Player player)
+        {
+            if(this.Level == 10)
+            {
+                Console.WriteLine("Congratulations! You reached level 10 and won the game!");
+            }
+            else
+            {
+                Console.WriteLine($"You are level {player.Level}. You have {player.Exp} exp, {player.Hp} health points and {player.Gold} gold coins.");
+            }
+        }
         
 
 
