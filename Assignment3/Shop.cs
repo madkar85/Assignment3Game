@@ -6,7 +6,7 @@ namespace Assignment3
 {
     class Shop
     {
-        
+        //Affären fär man kan köpa charm för att öka styrka och uthållighet
         public static void ShopMenu(Player player)
         {
             bool keepBuying = true;

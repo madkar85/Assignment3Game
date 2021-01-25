@@ -20,6 +20,7 @@ namespace Assignment3.Enemies
         public int Gold { get => gold; set => gold = value; }
         public string Sound { get => sound; set => sound = value; }
 
+        //Hur mycket skada monstret ska ta beroende på om spelaren har charms eller inte.
         public virtual void TakeDamage(int damage, Player player)
         {
             if(player.Strength > 0)
@@ -36,6 +37,7 @@ namespace Assignment3.Enemies
             if (Hp <= 0)
             {
                 this.Hp = 0;
+                
             }
 
             Console.WriteLine($"You hit the monster, dealing {damage} damage");           
@@ -44,20 +46,16 @@ namespace Assignment3.Enemies
 
         } 
 
+        //Visar vad som händer om monstret dött.
         public virtual void IsDead(Player player)
         {
-            if (this.Hp <= 0)
-            {
+            
                 Console.WriteLine($"* You killed the monster! You earned {this.ExpWhenKilled} exp points! *");
-                player.Exp += this.ExpWhenKilled;
-                player.Gold += this.Gold;
-                player.CheckLevel(player);
-                //Console.WriteLine($"You are level {player.Level}. You have {player.Exp} exp, {player.Hp} health points and {player.Gold} gold coins.");
-
-               //keepFighting = false;
-            }
+           
         }
 
+
+        //Bestämmer hur starkt monstret ska vara beroende på spelarens level.
         public virtual void SetMonsterToughness(Player player)
         {
             
@@ -74,26 +72,27 @@ namespace Assignment3.Enemies
             else if(player.Level == 3)
             {
                 this.Hp += 8;
-                this.ExpWhenKilled -= 2;
+                this.ExpWhenKilled -= 3;
             }
             else if (player.Level >= 4 || player.Level == 5)
             {
                 this.Hp += 10;
-                this.ExpWhenKilled -= 2;
+                this.ExpWhenKilled -= 3;
             }                      
             else if (player.Level >= 6 || player.Level == 8)
             {
                 this.Hp += 12;
-                this.ExpWhenKilled -= 2;
+                this.ExpWhenKilled -= 4;
             }         
             else if (player.Level >= 9)
             {
                 this.Hp += 14;
-                this.ExpWhenKilled -= 2;
+                this.ExpWhenKilled -= 4;
             }
 
         }
 
+        //Bestämmer läte på monstret
         public virtual void Noice(string sound)
         {
             Console.WriteLine($"* {this.Sound} *");

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assignment3.Enemies;
+using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Net.Security;
@@ -19,7 +20,7 @@ namespace Assignment3
         private int toughness;
 
       
-
+        //Bestämmer hur stor skada spelaren tar beroende på om spelarens uthållighet
         public void TakeDamage(int damage)
         {
             if(this.Toughness > 0)
@@ -37,6 +38,7 @@ namespace Assignment3
             if (Hp <= 0)
             {
                 this.Hp = 0;
+               
             }
 
             Console.WriteLine($"The monster hit you, dealing {damage} damage");
@@ -45,6 +47,31 @@ namespace Assignment3
            
         }
 
+        //Lägger till exp poäng och kollar om man levlat upp
+        public void AddExperience(int exp)
+        {
+            
+            if (((this.Exp + exp) / 10 - this.Exp / 10) > 0)
+            {
+              
+                Console.WriteLine($"You leveled up! You are now level {this.Level + 1}");
+            }
+            else
+            {
+                
+            }
+
+            this.Exp += exp;
+            CheckLevel();
+        }
+
+        //hämtar guld från monster när man vinner en strid
+        public void TakeGold(int gold)
+        {
+            this.Gold += gold;
+        }
+
+        //bestämmer vad som händer om spelaren dött
         public void IsDead()
         {
 
@@ -52,8 +79,32 @@ namespace Assignment3
            
         }
 
-    
+        //kollar vilken level spelaren har, om man vunnit än
+        public void CheckLevel()
+        {
 
+            this.Level = this.Exp / 10;
+
+            if ( this.Level == 10)
+            {
+                LastLevel();
+            }
+            else 
+            {
+                Console.WriteLine($"You are level {this.Level}. You have {this.Exp} exp, {this.Hp} health points and {this.Gold} gold coins.");
+            }
+
+
+        }
+        
+        //om spelaren har nått level 10 så vinner den.
+        public void LastLevel()
+        {
+            Console.WriteLine("Congratulations! You reached level 10 and won the game!");
+
+        }
+        
+        //visar spelarens specifikationer
         public void CharacterDetails()
         {
             Console.WriteLine("* * * * * * * * * * * *");
@@ -67,32 +118,12 @@ namespace Assignment3
             Console.WriteLine("* * * * * * * * * * * *");
         }
 
-        public void CheckLevel(Player player)
-        {
-            if(this.Level == 10)
-            {
-                Console.WriteLine("Congratulations! You reached level 10 and won the game!");
-            }
-            else
-            {
-                Console.WriteLine($"You are level {player.Level}. You have {player.Exp} exp, {player.Hp} health points and {player.Gold} gold coins.");
-            }
-        }
-        
-
 
 
         public string Name { get => name; set => name = value; }
         public int Level { get => level; set => level = value; }
-        public int Exp {
-            get => exp;
-            set {
-                exp = value;
-                this.Level = value / 10;
-            }
-        }
+        public int Exp { get => exp; set => exp = value;}
         public int Hp { get => hp; set => hp = value; }
-
         public int Gold { get => gold; set => gold = value; }
         public int Strength { get => strength; set => strength = value; }
         public int Toughness { get => toughness; set => toughness = value; }

@@ -12,6 +12,7 @@ namespace Assignment3
         static Player player = new Player();
         static List<Monster> listOfMonsters = new List<Monster>{   new Troll(), new GiantSpider(), new NinjaThief() };
 
+        //startmeny
         public static void Welcome()
         {
             Console.WriteLine("* * * * * * * * * * * *");
@@ -26,7 +27,7 @@ namespace Assignment3
 
         }
 
-
+        //spelmenyn, anropas efter varje fight, affärsbesök eller efter att man kollat spelarstatus.
          public static void Menu()
         {
             bool keepGoing = true;
@@ -35,6 +36,7 @@ namespace Assignment3
 
             while (keepGoing)
             {
+                //nytt monster slumpas vid varje fight
                 List<Monster> listOfMonsters = new List<Monster> { new Troll(), new GiantSpider(), new NinjaThief() };
                 Console.WriteLine("1. Go adventuring");
                 Console.WriteLine("2. Show details about your character");
@@ -77,10 +79,13 @@ namespace Assignment3
 
         }
 
+        //bestämmer om det blir en fight eller inte. 
         public static void PlayGame(Monster monster)
         {
             int direction = Utility.RandomNumber(1, 3);
             int chance = Utility.RandomNumber(1,11);
+
+            //10% chans att det inte händer något. Sedan 50% chans på om man ser en skog eller ett berg.
             if (chance == 1)
             {
                 if(direction == 1)
@@ -107,6 +112,7 @@ namespace Assignment3
 
         public static void BattleMode(Monster monster)
         {
+            
             monster.SetMonsterToughness(player);
             bool keepFighting = true;
 
@@ -119,6 +125,8 @@ namespace Assignment3
                 if (monster.Hp <= 0)
                 {
                     monster.IsDead(player);
+                    player.TakeGold(monster.Gold);
+                    player.AddExperience(monster.ExpWhenKilled);
                      
                     keepFighting = false;
                 }
@@ -142,11 +150,14 @@ namespace Assignment3
 
         }
 
+        //visar spelarens specifikationer
         public static void CharacterDetails()
         {
             player.CharacterDetails();
 
         }
+
+        //avslutar spelet.
         public static void ExitGame()
         {
             

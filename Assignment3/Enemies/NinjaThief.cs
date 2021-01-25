@@ -12,7 +12,7 @@ namespace Assignment3.Enemies
         {
             this.Name = "Ninja Thief";
             this.Hp = 35;
-            this.ExpWhenKilled = 12;
+            this.ExpWhenKilled = 9;
             this.Gold = 50;
             this.Sound = "I'm gonna cut you!";
         }

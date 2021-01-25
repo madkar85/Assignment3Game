@@ -12,7 +12,7 @@ namespace Assignment3.Enemies
 
             this.Name = "Rabid Bear";
             this.Hp = 30;
-            this.ExpWhenKilled = 10;
+            this.ExpWhenKilled = 8;
             this.Gold = 40;
             this.Sound = "RAAAAAAAWWWWWWWWRRRRRRR";
 
